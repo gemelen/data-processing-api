@@ -1,0 +1,17 @@
+# Metals stuff
+.metals/
+.bloop/
+project/metals.sbt
+
+# SBT stuff
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+#
+*.class
+
+#
+*.log
