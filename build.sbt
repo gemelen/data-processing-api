@@ -17,6 +17,7 @@ lazy val root = project
 lazy val api = project
   .in(file("api"))
   .enablePlugins(LibraryProjectPlugin)
+  .enablePlugins(GithubPlugin)
   .settings(
     name := "data-processing-api",
     libraryDependencies ++=
