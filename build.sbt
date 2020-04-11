@@ -17,9 +17,11 @@ lazy val root = project
 lazy val api = project
   .in(file("api"))
   .enablePlugins(LibraryProjectPlugin)
-  .enablePlugins(GithubPlugin)
+  .enablePlugins(BintrayPlugin)
   .settings(
     name := "data-processing-api",
+    bintrayRepository := "data-platform",
+    licenses += ("Apache-2.0", url("http://apache.org/licenses/LICENSE-2.0")),
     libraryDependencies ++=
       cats
   )
