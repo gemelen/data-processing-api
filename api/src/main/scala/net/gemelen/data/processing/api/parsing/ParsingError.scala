@@ -14,5 +14,5 @@ package net.gemelen.data.processing.api.parsing
 
 sealed abstract class ParsingError
 
-final class UnknownFormat(message: String) extends ParsingError
-final class UparsableData(message: String) extends ParsingError
+final class UnknownFormat(message: String)  extends ParsingError
+final class UnparsableData(message: String) extends ParsingError
