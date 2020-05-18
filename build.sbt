@@ -2,7 +2,7 @@ import compiler._
 import deps._
 
 ThisBuild / scalaVersion := "2.12.11"
-ThisBuild / version := "0.4"
+ThisBuild / version := "0.5"
 ThisBuild / turbo := true
 ThisBuild / scalacOptions := CompilerOpts.scalacFlags
 ThisBuild / scalafmtConfig := baseDirectory.value / "project" / ".scalafmt.conf"
