@@ -2,7 +2,7 @@ import compiler._
 import deps._
 
 ThisBuild / scalaVersion := "2.12.11"
-ThisBuild / version := "0.3.1"
+ThisBuild / version := "0.4"
 ThisBuild / turbo := true
 ThisBuild / scalacOptions := CompilerOpts.scalacFlags
 ThisBuild / scalafmtConfig := baseDirectory.value / "project" / ".scalafmt.conf"
@@ -21,7 +21,7 @@ lazy val api = project
   .settings(
     name := "data-processing-api",
     bintrayRepository := "data-platform",
-    licenses ++= Seq(("Apache-2.0", url("http://apache.org/licenses/LICENSE-2.0"))),
+    licenses += ("Apache-2.0", url("http://apache.org/licenses/LICENSE-2.0")),
     libraryDependencies ++=
       cats
   )
