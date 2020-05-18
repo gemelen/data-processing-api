@@ -14,8 +14,8 @@ package net.gemelen.data.processing.api.enrichment
 
 import net.gemelen.data.processing.api.Event
 
-trait Enricher[T] {
+trait Enricher[T <: Event[_]] {
 
-  def enrich(event: Event[T]): Either[EnrichmentError, Event[T]]
+  def enrich(event: T): Either[EnrichmentError, T]
 
 }

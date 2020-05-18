@@ -15,8 +15,8 @@ package net.gemelen.data.processing.api.validation
 import cats.data.Validated
 import net.gemelen.data.processing.api.Event
 
-trait Validator[T] {
+trait Validator[T <: Event[_]] {
 
-  def validate(event: Event[T]): Validated[ValidationError, Event[T]]
+  def validate(event: T): Validated[ValidationError, T]
 
 }
