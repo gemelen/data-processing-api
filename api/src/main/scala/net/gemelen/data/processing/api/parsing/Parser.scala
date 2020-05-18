@@ -14,8 +14,8 @@ package net.gemelen.data.processing.api.parsing
 
 import net.gemelen.data.processing.api.Event
 
-trait Parser[I, O] {
+trait Parser[I, O <: Event[_]] {
 
-  def parse(raw: I): Either[ParsingError, Event[O]]
+  def parse(raw: I): Either[ParsingError, O]
 
 }
