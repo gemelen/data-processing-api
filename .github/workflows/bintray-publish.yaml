@@ -7,10 +7,12 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v2
         with:
           fetch-depth: '0'
-      - uses: olafurpg/setup-scala@v7
+      - name: setup scala
+        uses: olafurpg/setup-scala@v7
         with:
           java-version: adopt@1.11
       - name: publish to Bintray
@@ -18,10 +20,9 @@ jobs:
           BINTRAY_USER: ${{ secrets.BINTRAY_USER }}
           BINTRAY_PASS: ${{ secrets.BINTRAY_TOKEN }}
         run: sbt api/publish
-  tag:
-    runs-on: ubuntu-latest
-    needs: publish
-    steps:
-      - uses: anothrNick/github-tag-action@1.17.2
+      - name: tag release  
+        uses: anothrNick/github-tag-action@1.17.2
+        if: ${{ success() }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
